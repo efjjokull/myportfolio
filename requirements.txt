@@ -1,10 +1,10 @@
 asgiref==3.3.1
 Cython==0.29.14
 Django==3.1.6
-gensim==3.8.3
-numpy==1.20.1
-pytz==2021.1
-scipy==1.6.0
+gensim
+numpy
+pytz
+scipy
 six==1.15.0
 smart-open==4.2.0
 sqlparse==0.4.1
