@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os
+import 
+import django_heroku # remove this on local
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'wz#+vqb49l6cpuivx(2x&pu@l5(w*7z08xcz85!6r6s)2seq^$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [.herokuapp.com]
 
 
 # Application definition
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'mywebsite.apps.MywebsiteConfig', # add
     'p2v.apps.P2VConfig', # add
     'digitrecognition.apps.DigitrecognitionConfig', # add
+
+    'whitenoise.runserver_nostatic', # add
 ]
 
 MIDDLEWARE = [
