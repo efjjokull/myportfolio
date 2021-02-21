@@ -65,7 +65,7 @@ window.addEventListener("load",() =>{
         }
     
         data_tf = tf.tensor(DATA).reshape([1,28,28,1]);
-        const model = await tf.loadLayersModel("model2/model.json");
+        const model = await tf.loadLayersModel("../digitrecognition/model2/model.json");
         const input = data_tf.div(tf.scalar(255));
         const prediction = await model.predict(input).data();
 
