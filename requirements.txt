@@ -1,13 +1,7 @@
-asgiref==3.3.1
-Cython==0.29.14
-Django==3.1.6
-gensim
-numpy
-pytz
-scipy
-six==1.15.0
-smart-open==4.2.0
-sqlparse==0.4.1
+django==3.1.6
 gunicorn
 django-heroku
+numpy
+scipy
+gensim
 whitenoise
