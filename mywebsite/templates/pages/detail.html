@@ -1,0 +1,18 @@
+{% extends 'pages/base.html' %}
+{% block content %}
+    
+    <div class="container mx-auto">
+        <p>detailpage</p>
+    <div style="border-radius:2vw;
+    box-shadow:  -0.5vw -0.5vw 1vw #d4d4d4, 0.5vw 0.5vw 1vw #ffffff; margin: 1.5vh; padding: 3vh;">
+
+        <h5 class="mt-0">title: {{ item.title }}</h5>
+        <p>{{ item.content }}</p>
+        <div class="small">
+            Witten by {{ item.author }} {{ item.created_time }}<br>
+            updated time: {{ item.updated_time }}
+        </div>
+        <p></p>
+    </div>
+</div>
+{% endblock %}

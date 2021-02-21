@@ -1,0 +1,90 @@
+{% extends 'pages/base.html' %}
+{% block content %}
+
+<div class="container">
+    <p>logined</p>
+    <p>制作物</p>
+    <div class="card-deck mb-3 text-center">
+        <div class="card mb-4">
+            <div class="card-header">
+                <a href="{% url 'p2v:toppage' %}">p2v</a>
+            </div>
+            <div class="card-body">body
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <a href="{% url 'digit_recognition:toppage' %}">mnist demo</a>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <a href="http://sm1057.skr.u-ryukyu.ac.jp/">サポートまるわかり</a>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <a href="https://ryukyushimpo.jp/pages/ryuvote.html">りゅうvote</a>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <a href="{% url 'mywebsite:toppage' %}">header</a>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<ul style="padding: 0;">
+    {% for item in object_list %}
+    
+    <div class="media">
+        <!--<svg class="bd-placeholder-img mr-3" width="64" height="64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text></svg>
+        -->
+        <!--<div class="media-body" style="border: #333333 solid 1px; margin: 1vh; padding: 1vh; border-radius: 1vh;">-->
+        <div class="media-body">
+          <h5 class="mt-0">
+              <a href="{% url 'mywebsite:detailpage' item.pk %}" style="color: #333333;">
+              {{ item.title }}</a></h5>
+              
+          {{ item.content | truncatechars:100}}<br>
+          <div class="small" style="color: #757575;">Witten by {{ item.author }}  {{ item.created_time }}</div>
+        </div>
+    </div>
+    
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

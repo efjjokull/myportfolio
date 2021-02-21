@@ -1,0 +1,14 @@
+{% extends 'pages/base.html' %}
+{% block content %}
+
+<form method="POST">
+    <div class="con-6-md">
+        <div class="card">
+            <div class="card-header">
+            <button type="submit" class="ptn">logout</button>
+            {% csrf_token %}
+        </div>
+    </div>
+</form>
+
+{% endblock %}

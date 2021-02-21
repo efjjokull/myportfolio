@@ -1,0 +1,118 @@
+{% extends 'pages/base.html' %}
+{% block content %}
+
+<div class="container">
+    <p>top page</p>
+
+    <div class=" mb-3">
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <p>このページについて</ｐ>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>作ったものとその説明を書いたページです</li>
+                    <li>Djangoで作っており，ログインをするとCRUD処理をすることができます</li>
+                    <li>現状はHerokuで動かしていますがAWSに移植予定</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <a href="{% url 'p2v:toppage' %}" class="stretched-link">p2v</a>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>あるポケ〇ンに任意のタイプを追加で与えるとそれらからどのようなポケ〇ンが連想されるかを提示するシステム</ｈ>
+                    <li>システムは単語の分散表現（Word2Vec）を用いており，事前に学習させたモデルをPython側で動かしてブラウザへ返している</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <a href="{% url 'digit_recognition:toppage' %}" class="stretched-link">mnist demo</a>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Tensorflow.jsというライブラリを用いてフロント側でモデルをロードし簡単な手書き数字を認識するシステム</li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <a href="http://sm1057.skr.u-ryukyu.ac.jp/" class="stretched-link">サポートまるわかり</a>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>沖縄市に住む保護者さんに子育て支援制度・子どもの居場所の情報を提供するシステム</li>
+                    <li>同市には見やすい・軽量・まとまった情報が掲載されたページが存在しなかった</li>
+                    <li>SPA化することで画面遷移を高速にし，MDS（多次元尺度法）をもちいて似た傾向のものを近くに表示することで上記課題の解決を試みた</li>
+                    <li>開発依頼を受けた際，子育て支援をしたいという意思に共感し技術的な面を全面的に担当（使用フレームワーク：Vue.js）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <a href="https://ryukyushimpo.jp/pages/ryuvote.html" class="stretched-link">りゅうvote</a>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>沖縄県議選の候補者たちと同じ質問に回答することでユーザーと候補者との考えがどの程度似ているかをユーザーに示すシステム</li>
+                    <li>地元新聞社との共同開発で技術的な面を全面的に担当</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <p>製作中</ｐ>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Posenetを用いた’何か’を製作中</li>
+                    <li>ブラウザでも動くようにはなったもののまだ構想の段階</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <p>その他URL</ｐ>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    1. <a href="https://ryukyushimpo.jp/news/entry-1138674.html">りゅうVOTEの評判</a><br>
+                    2. <a href="https://www.u-ryukyu.ac.jp/news/19834/">サポートまるわかり：大学記者懇談会</a><br>
+                    3. <a href="http://www.nanospin.riec.tohoku.ac.jp/JNNS2020/files/program.pdf">研究（口頭発表）</a><br>
+                    4. <a>準備中（ハッカソンで作成したWebRTCを用いたマッチングシステム）</a><br>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<ul style="padding: 0;">
+    {% for item in object_list %}
+    
+    <div class="media">
+        <!--<svg class="bd-placeholder-img mr-3" width="64" height="64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 64x64"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">64x64</text></svg>
+        -->
+        <!--<div class="media-body" style="border: #333333 solid 1px; margin: 1vh; padding: 1vh; border-radius: 1vh;">-->
+        <div class="media-body">
+          <h5 class="mt-0">
+              <a href="{% url 'mywebsite:detailpage' item.pk %}" style="color: #333333;">
+              {{ item.title }}</a></h5>
+              
+          {{ item.content | truncatechars:100}}<br>
+          <div class="small" style="color: #757575;">Witten by {{ item.author }}  {{ item.created_time }}</div>
+        </div>
+    </div>
+    
+    {% endfor %}
+</ul>
+</div>
+{% endblock %}

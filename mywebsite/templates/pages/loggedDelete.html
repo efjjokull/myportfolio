@@ -1,0 +1,19 @@
+{% extends 'pages/base.html' %}
+{% block content %}
+    <p>delete page</p>
+        
+    以下を削除
+    <ul>
+        <li>title: {{ item.title }}</li>
+        <li>content: {{ item.content }}</li>
+        <li>created time: {{ item.created_time }}</li>
+        <li>updated time: {{ item.updated_time }}</li>
+        <li>author: {{ item.author }}</li>
+    </ul>
+
+    <form method='POST'>
+        {% csrf_token %}
+        <button type="submit">delete</button>
+    </form>
+    <a href="{% url 'mywebsite:detailpage' item.pk %}">return</a>
+{% endblock %}
