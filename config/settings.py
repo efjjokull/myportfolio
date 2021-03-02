@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'wz#+vqb49l6cpuivx(2x&pu@l5(w*7z08xcz85!6r6s)2seq^$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com']
-
+# ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
@@ -135,6 +135,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
 LOGIN_URL = 'mywebsite:loginpage'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL= 'mywebsite:loginpage'
