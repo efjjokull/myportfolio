@@ -2,37 +2,43 @@
 {% load static %}
 {% block content %}
 
-<div class="contener ml-3">
-    <h2>recognition demo</h2>
-    <div class="row">
-    <div class="col-md-6">
-        <canvas
-            id="input"
-            width="400px"
-            height="400px"
-            style="border: solid 1px"
-        ></canvas>
-        <button type="button" class="btn btn-outline-secondary" id ="reset">reset</button>
-    </div> 
-        <div id ="outcome" class="col-md-6">
-            
-            <div id="0">0 : 0%</div>
-            <div id="1">1 : 0%</div>
-            <div id="2">2 : 0%</div>
-            <div id="3">3 : 0%</div>
-            <div id="4">4 : 0%</div>
+    
+    <div class="container">
+        <h2>digit recognition</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <canvas
+                    id="input"
+                    width="400px"
+                    height="400px"
+                    style="border: solid 1px"
+                ></canvas>
+                <p>
+                <button class="btn mt-3 btn-outline-success" id ="reset">reset</button>
+            </div> 
 
-            <div id="5">5 : 0%</div>
-            <div id="6">6 : 0%</div>
-            <div id="7">7 : 0%</div>
-            <div id="8">8 : 0%</div>
-            <div id="9">9 : 0%</div>
-            <p></p>
-            you wrote
-            <div id="ans">---</div>  
+            <div id ="outcome" class="col-md-6">
+                
+                <div id="0">0 : 0%</div>
+                <div id="1">1 : 0%</div>
+                <div id="2">2 : 0%</div>
+                <div id="3">3 : 0%</div>
+                <div id="4">4 : 0%</div>
+
+                <div id="5">5 : 0%</div>
+                <div id="6">6 : 0%</div>
+                <div id="7">7 : 0%</div>
+                <div id="8">8 : 0%</div>
+                <div id="9">9 : 0%</div>
+                <p></p>
+                you wrote
+                <div id="ans">0</div>
+
+            </div>
         </div>
     </div>
-</div>
+
+
 <script>
 
 window.addEventListener("load",() =>{
@@ -48,7 +54,9 @@ window.addEventListener("load",() =>{
         if(!isDrag){
             return;
         }
-        
+
+
+
         context.lineWidth = 15;
         context.lineCap = "round";
         context.lineJoin = "round";
@@ -102,7 +110,8 @@ window.addEventListener("load",() =>{
         }
     
         data_tf = tf.tensor(DATA).reshape([1,28,28,1]);
-        const model = await tf.loadLayersModel("/static/model2/model.json");
+        const model = await tf.loadLayersModel("{% static 'model2/model.json' %}");
+        const input = data_tf.div(tf.scalar(255));
         const prediction = await model.predict(input).data();
 
         let elm0 = document.getElementById("0");
