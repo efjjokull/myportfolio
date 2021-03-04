@@ -1,5 +1,3 @@
-console.log('loaded');
-
 // window.onload = function() {
 //     console.log('loaded');
 //     // const canvas = document.getElementById("input");
