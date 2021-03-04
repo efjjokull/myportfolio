@@ -1,4 +1,5 @@
-window.addEventListener("load",() =>{
+window.onload = function() {
+    console.log('loaded');
     // const canvas = document.getElementById("input");
     // const context = canvas.getContext("2d");
     // const position = {x:null,y:null};
@@ -115,4 +116,4 @@ window.addEventListener("load",() =>{
     //     draw(event.layerX,event.layerY);
     // })
 
-})  
+};
