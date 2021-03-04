@@ -1,49 +1,49 @@
 window.addEventListener("load",() =>{
-    const canvas = document.getElementById("input");
-    const context = canvas.getContext("2d");
-    const position = {x:null,y:null};
-    context.fillStyle = "black";
-    context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    let isDrag = false;
+    // const canvas = document.getElementById("input");
+    // const context = canvas.getContext("2d");
+    // const position = {x:null,y:null};
+    // context.fillStyle = "black";
+    // context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    // let isDrag = false;
     
 
-    function draw(x,y){
-        if(!isDrag){
-            return;
-        }
-        context.lineWidth = 15;
-        context.lineCap = "round";
-        context.lineJoin = "round";
-        context.strokeStyle = "white";
+    // function draw(x,y){
+    //     if(!isDrag){
+    //         return;
+    //     }
+    //     context.lineWidth = 15;
+    //     context.lineCap = "round";
+    //     context.lineJoin = "round";
+    //     context.strokeStyle = "white";
 
-        if(position.x ===null || position.y ===null){
-            context.moveTo(x,y);
-        }else{
-            context.moveTo(position.x,position.y);
-        }
+    //     if(position.x ===null || position.y ===null){
+    //         context.moveTo(x,y);
+    //     }else{
+    //         context.moveTo(position.x,position.y);
+    //     }
 
-        context.lineTo(x,y);
-        context.stroke();
-        position.x = x;
-        position.y = y;
-    }
+    //     context.lineTo(x,y);
+    //     context.stroke();
+    //     position.x = x;
+    //     position.y = y;
+    // }
 
-    function reset(){
-        context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-    }
+    // function reset(){
+    //     context.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    // }
 
-    function drag_start(){
-        context.beginPath();
-        isDrag = true;
-    }
+    // function drag_start(){
+    //     context.beginPath();
+    //     isDrag = true;
+    // }
 
-    function drag_end(){
-        context.closePath();
-        isDrag = false;
-        position.x = null;
-        position.y = null;
+    // function drag_end(){
+    //     context.closePath();
+    //     isDrag = false;
+    //     position.x = null;
+    //     position.y = null;
 
-    }
+    // }
 
     // async function fnc(){
 
@@ -107,12 +107,12 @@ window.addEventListener("load",() =>{
     // reset_botton.addEventListener("click",reset);
 
     // canvas.addEventListener("mouseup",fnc);
-    canvas.addEventListener("mousedown",drag_start);
-    canvas.addEventListener("mouseup",drag_end);
-    canvas.addEventListener("mouseout",drag_end);
-    canvas.addEventListener("mousemove",(event)=>{
+    // canvas.addEventListener("mousedown",drag_start);
+    // canvas.addEventListener("mouseup",drag_end);
+    // canvas.addEventListener("mouseout",drag_end);
+    // canvas.addEventListener("mousemove",(event)=>{
 
-        draw(event.layerX,event.layerY);
-    })
+    //     draw(event.layerX,event.layerY);
+    // })
 
 })  
