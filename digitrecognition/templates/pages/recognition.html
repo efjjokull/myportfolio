@@ -1,5 +1,8 @@
 {% extends 'pages/base.html' %}
+{% load static %}
 {% block content %}
+
+<script src="{% static 'js/recognition.js' %}"></script>
 
 <div class="container">
     <h2>digit recognition</h2>
@@ -35,5 +38,5 @@
         </div>
     </div>
 </div>
-<script src="{% static 'js/recognition.js' %}"></script>
+
 {% endblock %}
