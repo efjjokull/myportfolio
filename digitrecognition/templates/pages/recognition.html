@@ -153,6 +153,7 @@ window.addEventListener("load",() =>{
     canvas.addEventListener("mouseup",drag_end);
     canvas.addEventListener("mouseout",drag_end);
     canvas.addEventListener("touchend",drag_end);
+    canvas.addEventListener("touchend",fnc);
 
     canvas.addEventListener("mousemove",(event)=>{
         draw(event.layerX,event.layerY);
