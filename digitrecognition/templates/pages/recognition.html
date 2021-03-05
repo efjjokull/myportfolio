@@ -35,6 +35,7 @@
         </div>
     </div>
 </div>
+
 <script>
 window.addEventListener("load",() =>{
     const canvas = document.getElementById("input");
@@ -145,13 +146,23 @@ window.addEventListener("load",() =>{
     reset_botton.addEventListener("click",reset);
 
     canvas.addEventListener("mouseup",fnc);
+
     canvas.addEventListener("mousedown",drag_start);
+    canvas.addEventListener("touchstart",drag_start);
+
     canvas.addEventListener("mouseup",drag_end);
     canvas.addEventListener("mouseout",drag_end);
-    canvas.addEventListener("mousemove",(event)=>{
+    canvas.addEventListener("touchend",drag_end);
 
+    canvas.addEventListener("mousemove",(event)=>{
         draw(event.layerX,event.layerY);
     })
+
+    canvas.addEventListener("touchmove",function(event) {
+        event.preventDefault();
+        draw(event.layerX,event.layerY);
+    }, false);
+
 
 })  
 </script>

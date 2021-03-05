@@ -12,7 +12,7 @@ class PageView(generic.ListView):
 
     def get_template_names(self):
         
-        if self.request.user.is_superuser:
+        if self.request.user.is_authenticated:
             template_name = 'pages/loggedPage.html'
         else:
             template_name = self.template_name
@@ -28,7 +28,7 @@ class CreateArticle(generic.CreateView):
 
     def get_template_names(self):
         
-        if self.request.user.is_superuser:
+        if self.request.user.is_authenticated:
             template_name = 'pages/loggedCreate.html'
         else:
             template_name = self.template_name
@@ -46,7 +46,7 @@ class DetailArticle(generic.DetailView):
 
     def get_template_names(self):
         
-        if self.request.user.is_superuser:
+        if self.request.user.is_authenticated:
             template_name = 'pages/loggedDetail.html'
         else:
             template_name = self.template_name
@@ -89,7 +89,7 @@ class LoginPage(LoginView):
 
     def get_template_names(self):
         
-        if self.request.user.is_superuser:
+        if self.request.user.is_authenticated:
             template_name = 'pages/loggedlogin.html'
         else:
             template_name = self.template_name

@@ -36,6 +36,31 @@
     </div>
 </div>
 <script>
+    $('form').change( function(event){
+        event.preventDefault();
+        var form =$(this).val();
+        $('form').submit();
+    });
+    $('form').submit( function(event){
+        event.preventDefault();
+        var form =$(this);
+        $.ajax({
+            url:form.prop('action'),
+            method:form.prop('method'),
+            data:form.serialize(),
+            timeout:10000,
+            dataType:'text',
+        })    
+        .done(function(data) {
+            data = data.split(',');
+            $('#outcome_1').text(data[0]);
+            $('#outcome_2').text(data[1]);
+            $('#outcome_3').text(data[2]);
+
+        })
+        console.log("done");
+    });
+    
     function randomGeneratorName(){
     var num = Math.floor(Math.random()*927);
     document.form.c_name.selectedIndex = num;

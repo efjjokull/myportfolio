@@ -2,66 +2,94 @@
 {% block content %}
 
 <div class="container">
-    <p>logined</p>
-    <p>制作物</p>
-    <div class="card-deck mb-3 text-center">
+    <p>ログイン中</p>
+
+    <div class=" mb-3">
+
         <div class="card mb-4">
             <div class="card-header">
-                <a href="{% url 'p2v:toppage' %}">p2v</a>
+                <p>このページについて</ｐ>
             </div>
-            <div class="card-body">body
+            <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+                    <li>作ったものとその説明を書いたページです</li>
+                    <li>Djangoで作っており，ログインをするとCRUD処理をすることができます</li>
+                    <li>現状はHerokuで動かしていますがAWSに移植予定</li>
                 </ul>
             </div>
         </div>
         <div class="card mb-4">
             <div class="card-header">
-                <a href="{% url 'digit_recognition:toppage' %}">mnist demo</a>
+                <a href="{% url 'p2v:toppage' %}" class="stretched-link">p2v</a>
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+                    <li>あるポケ〇ンに任意のタイプを追加で与えるとそれらからどのようなポケ〇ンが連想されるかを提示するシステム</ｈ>
+                    <li>システムは単語の分散表現（Word2Vec）を用いており，事前に学習させたモデルをPython側で動かしてブラウザへ返している</li>
                 </ul>
             </div>
         </div>
+
         <div class="card mb-4">
             <div class="card-header">
-                <a href="http://sm1057.skr.u-ryukyu.ac.jp/">サポートまるわかり</a>
+                <a href="{% url 'digit_recognition:toppage' %}" class="stretched-link">mnist demo</a>
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+                    <li>Tensorflow.jsというライブラリを用いてフロント側でモデルをロードし簡単な手書き数字を認識するシステム</li>
+                    <li>スマホ非対応</li>
                 </ul>
             </div>
         </div>
+
         <div class="card mb-4">
             <div class="card-header">
-                <a href="https://ryukyushimpo.jp/pages/ryuvote.html">りゅうvote</a>
+                <a href="http://sm1057.skr.u-ryukyu.ac.jp/" class="stretched-link">サポートまるわかり</a>
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+                    <li>沖縄市に住む保護者さんに子育て支援制度・子どもの居場所の情報を提供するシステム</li>
+                    <li>同市には見やすい・軽量・まとまった情報が掲載されたページが存在しなかった</li>
+                    <li>SPA化することで画面遷移を高速にし，MDS（多次元尺度法）をもちいて似た傾向のものを近くに表示することで上記課題の解決を試みた</li>
+                    <li>開発依頼を受けた際，子育て支援をしたいという意思に共感し技術的な面を全面的に担当（使用フレームワーク：Vue.js）</li>
                 </ul>
             </div>
         </div>
+
         <div class="card mb-4">
             <div class="card-header">
-                <a href="{% url 'mywebsite:toppage' %}">header</a>
+                <a href="https://ryukyushimpo.jp/pages/ryuvote.html" class="stretched-link">りゅうvote</a>
             </div>
             <div class="card-body">
                 <ul class="list-unstyled mt-3 mb-4">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+                    <li>沖縄県議選の候補者たちと同じ質問に回答することでユーザーと候補者との考えがどの程度似ているかをユーザーに示すシステム</li>
+                    <li>地元新聞社との共同開発で技術的な面を全面的に担当</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <p>製作中</ｐ>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Posenetを用いた’何か’を製作中</li>
+                    <li>ブラウザでも動くようにはなったもののまだ構想の段階</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <p>その他URL</ｐ>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    1. <a href="https://ryukyushimpo.jp/news/entry-1138674.html">りゅうVOTEの評判</a><br>
+                    2. <a href="https://www.u-ryukyu.ac.jp/news/19834/">サポートまるわかり：大学記者懇談会</a><br>
+                    3. <a href="http://www.nanospin.riec.tohoku.ac.jp/JNNS2020/files/program.pdf">研究（口頭発表）</a><br>
+                    4. <a>準備中（ハッカソンで作成したWebRTCを用いたマッチングシステム）</a><br>
                 </ul>
             </div>
         </div>
