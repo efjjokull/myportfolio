@@ -19,4 +19,4 @@ https://mywebsitesugura.herokuapp.com/
 1. pip install requirements.txt
 2. python manage.py runserver
 
-※SECRET_KEYを抜いているのでClone前にキーを自前で用意する必要があります．
+※SECRET_KEYは自前で用意する必要があります．
