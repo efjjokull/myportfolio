@@ -19,5 +19,9 @@
 pip install requirements.txt
 python manage.py runserver
 ```
-
+settings.py
+```
+DEBUG = True
+ALLOWED_HOSTS = []
+```
 ※SECRET_KEYは自前で用意する必要があります．
