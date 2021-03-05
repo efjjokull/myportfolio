@@ -22,7 +22,7 @@ class PageView(generic.ListView):
 class CreateArticle(generic.CreateView):
     template_name = 'pages/create.html'
     model = Article
-    fields = ('title', 'content', 'author', )
+    fields = ('title', 'content','author', )
 
     success_url = reverse_lazy('mywebsite:listpage')
 
@@ -72,7 +72,7 @@ class UpdateArticle(generic.UpdateView):
     template_name = 'pages/update.html'
     model = Article
     fields = ('title', 'content', )
-    success_url = reverse_lazy('mywebsite:listpage')
+    success_url = reverse_lazy('mywebsite:toppage')
 
     def get_template_names(self):
         

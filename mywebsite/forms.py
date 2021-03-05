@@ -1,6 +1,7 @@
 from django import forms
+from django.forms import ModelForm
 from django.contrib.auth.forms import AuthenticationForm
-
+from .models import Article
 """
 class Article(forms.Form):
     title = models.CharField(max_length=50)
